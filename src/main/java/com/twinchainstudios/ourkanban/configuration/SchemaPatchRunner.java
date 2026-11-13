@@ -22,14 +22,14 @@ public class SchemaPatchRunner {
     public void patchDatabaseSchema() {
         try {
 
-            //TODO: en algun momento quitar esto, como en un mes o así -26/08/2026
-            log.info("Checking and applying automated schema patches...");
+          
+          //  log.info("Checking and applying automated schema patches...");
             // Converts the strict MySQL ENUM to a flexible VARCHAR for all existing databases
-            jdbcTemplate.execute("ALTER TABLE blackboard_elements MODIFY attachmentType VARCHAR(255)");
+          //  jdbcTemplate.execute("ALTER TABLE blackboard_elements MODIFY attachmentType VARCHAR(255)");
             // 2. Fix the NULLs for existing older records. 
             // If it's null, we set it to a safe default like 'NONE'.
-            jdbcTemplate.execute("UPDATE blackboard_elements SET attachmentType = 'NONE' WHERE attachmentType IS NULL");
-            log.info("Schema patch applied successfully.");
+          //  jdbcTemplate.execute("UPDATE blackboard_elements SET attachmentType = 'NONE' WHERE attachmentType IS NULL");
+          //  log.info("Schema patch applied successfully.");
         } catch (Exception e) {
             log.warn("Schema patch encountered an issue (usually safe to ignore if already applied): {}", e.getMessage());
         }

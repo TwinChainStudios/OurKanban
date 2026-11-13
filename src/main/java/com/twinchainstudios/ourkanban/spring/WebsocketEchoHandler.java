@@ -30,7 +30,8 @@ public class WebsocketEchoHandler extends TextWebSocketHandler{
         try {
             session.sendMessage(new TextMessage(payload));
         } catch (Exception e) {
-            e.printStackTrace();
+            //TODO:Mirar si esto es necesario realmete
+           e.printStackTrace();
         }
     }
 
@@ -42,6 +43,7 @@ public class WebsocketEchoHandler extends TextWebSocketHandler{
                 }
                 
             } catch (Exception e) {
+                            //TODO:Mirar si esto es necesario realmete
                 e.printStackTrace();
             }
         }
@@ -52,6 +54,7 @@ public class WebsocketEchoHandler extends TextWebSocketHandler{
             try {
                 sessionAct.sendMessage(new TextMessage(payload));
             } catch (Exception e) {
+                //TODO:Mirar si esto es necesario realmete
                 e.printStackTrace();
             }
         }

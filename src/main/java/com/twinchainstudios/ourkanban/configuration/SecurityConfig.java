@@ -34,8 +34,9 @@ public class SecurityConfig {
 
    @Bean
 SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http
-        .csrf(csrf -> csrf.disable())
+    http //TODO: mirar si esto jode algo y por qué estaba desactivado
+    
+      //  .csrf(csrf -> csrf.disable())
         .sessionManagement(session -> session
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         )
